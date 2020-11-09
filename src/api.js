@@ -28,8 +28,8 @@ router.get('/pay', (req, res) => {
           "payment_method": "paypal"
       },
       "redirect_urls": {
-          "return_url": "/.netlify/functions/server/success",
-          "cancel_url": "/.netlify/functions/server/cancel"
+          "return_url": "/success",
+          "cancel_url": "/cancel"
       },
       "transactions": [{
           "item_list": {
