@@ -28,8 +28,8 @@ router.get('/pay', (req, res) => {
           "payment_method": "paypal"
       },
       "redirect_urls": {
-          "return_url": "/success",
-          "cancel_url": "/cancel"
+          "return_url": "https://affectionate-panini-f73590.netlify.app/.netlify/functions/api/success",
+          "cancel_url": "https://affectionate-panini-f73590.netlify.app/.netlify/functions/api/cancel"
       },
       "transactions": [{
           "item_list": {
@@ -121,7 +121,7 @@ router.get('/pay', (req, res) => {
       }
   });
   });
-  router.get('/cancel', (req, res) => res.send('Cancelled'));
+  router.get('/cancel', (req, res) => res.send('Payment has been cancelled'));
 app.use("/.netlify/functions/api", router); // path must route to lambda
 
 
